@@ -1,1 +1,210 @@
-test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sainithish Jaisankar | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Orbitron', sans-serif;
+      overflow-x: hidden;
+    }
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+    #preloader {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: #0d0d0d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .dark-mode {
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+      color: #ffffff;
+    }
+    .light-mode {
+      background: linear-gradient(135deg, #ffffff, #f0f0f0);
+      color: #0d0d0d;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      color: inherit;
+    }
+    .glow {
+      filter: drop-shadow(0 0 10px #00ffe5);
+    }
+    .neon-text {
+      text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff;
+    }
+    .glitch {
+      position: relative;
+      color: #0ff;
+    }
+    .glitch::before, .glitch::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 2px;
+      top: 0;
+      color: #ff00c8;
+      background: transparent;
+      overflow: hidden;
+      clip: rect(0, 900px, 0, 0);
+      animation: glitch 2s infinite linear alternate-reverse;
+    }
+    .glitch::after {
+      left: -2px;
+      color: #00ffe5;
+      animation: glitch 3s infinite linear alternate-reverse;
+    }
+    @keyframes glitch {
+      0% {clip: rect(0, 9999px, 0, 0);}
+      5% {clip: rect(10px, 9999px, 50px, 0);}
+      10% {clip: rect(85px, 9999px, 140px, 0);}
+      15% {clip: rect(45px, 9999px, 100px, 0);}
+      20% {clip: rect(70px, 9999px, 130px, 0);}
+      100% {clip: rect(0, 9999px, 0, 0);}
+    }
+  </style>
+</head>
+<body class="dark-mode">
+
+<div id="preloader">
+  <h2 class="text-4xl neon-text">Loading...</h2>
+</div>
+<div id="particles-js"></div>
+
+<!-- Dark Mode Toggle -->
+<div class="fixed top-5 right-5 z-50">
+  <button id="toggleDark" class="px-4 py-2 bg-purple-600 text-white rounded-full">Toggle Mode</button>
+</div>
+
+<!-- Hero Section -->
+<section class="min-h-screen flex flex-col items-center justify-center text-center">
+  <h1 class="text-5xl md:text-7xl glitch mb-4" data-text="Sainithish Jaisankar">Sainithish Jaisankar</h1>
+  <p class="text-xl text-gray-400">DevOps Engineer | Backend Developer | Automation Enthusiast</p>
+  <div class="mt-8 space-x-4">
+    <a href="https://github.com/sainithish1143" target="_blank" class="px-6 py-2 bg-pink-600 rounded-full text-white hover:scale-110 transform transition-all">View GitHub</a>
+    <a href="/path/to/Sainithish_resume.pdf" download class="px-6 py-2 bg-cyan-600 rounded-full text-white hover:scale-110 transform transition-all">Download Resume</a>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="py-20 px-10 md:px-40">
+  <div class="glass p-10">
+    <h2 class="text-3xl mb-4 neon-text">About Me</h2>
+    <p>I am a tech enthusiast with 5+ years of experience in Python development, DevOps practices, CI/CD, AWS cloud services, and automation scripting. Passionate about building scalable and resilient systems.</p>
+  </div>
+</section>
+
+<!-- Experience Section -->
+<section class="py-20 px-10 md:px-40">
+  <h2 class="text-3xl mb-10 neon-text">Experience Timeline</h2>
+  <div class="space-y-10">
+    <div class="glass p-6 hover:scale-105 transition-all flex items-center">
+      <div class="w-20 mr-6 glow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="currentColor"><text x="0" y="80" font-size="80">Amazon</text></svg>
+      </div>
+      <div>
+        <h3 class="text-xl mb-2">DevOps Engineer @ Amazon</h3>
+        <p class="text-gray-300">Migrated services to AWS Graviton, automated CI/CD pipelines, CloudAuth security improvements, Regional Flex migrations across regions.</p>
+      </div>
+    </div>
+
+    <div class="glass p-6 hover:scale-105 transition-all flex items-center">
+      <div class="w-20 mr-6 glow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="currentColor"><text x="0" y="80" font-size="80">Amazon</text></svg>
+      </div>
+      <div>
+        <h3 class="text-xl mb-2">Application Engineer @ Amazon</h3>
+        <p class="text-gray-300">Developed Diagnostics UI framework, automated taxonomy workflows, supported high-severity incident management with quick debug and fixes.</p>
+      </div>
+    </div>
+
+    <div class="glass p-6 hover:scale-105 transition-all flex items-center">
+      <div class="w-20 mr-6 glow">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="currentColor"><text x="0" y="80" font-size="80">TCS</text></svg>
+      </div>
+      <div>
+        <h3 class="text-xl mb-2">System Engineer @ TCS</h3>
+        <p class="text-gray-300">Developed automation scripts in Python and Ansible, SAP ABAP promotion management automation, handled on-call incident management for enterprise systems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section class="py-20 px-10 md:px-40">
+  <h2 class="text-3xl mb-10 neon-text">Skills</h2>
+  <div class="flex flex-wrap gap-6">
+    <span class="glass px-6 py-2">Python</span>
+    <span class="glass px-6 py-2">DevOps</span>
+    <span class="glass px-6 py-2">AWS</span>
+    <span class="glass px-6 py-2">Django</span>
+    <span class="glass px-6 py-2">Ansible</span>
+    <span class="glass px-6 py-2">CI/CD</span>
+    <span class="glass px-6 py-2">Automation</span>
+    <span class="glass px-6 py-2">Shell Scripting</span>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="py-20 px-10 md:px-40">
+  <div class="glass p-10">
+    <h2 class="text-3xl mb-4 neon-text">Contact</h2>
+    <p>Email: <a href="mailto:sainithishjaisankar@gmail.com" class="text-blue-400">sainithishjaisankar@gmail.com</a></p>
+    <p>Phone: +91 6383938857</p>
+  </div>
+</section>
+
+<!-- Scripts -->
+<script>
+particlesJS('particles-js', {
+  particles: {
+    number: { value: 100 },
+    color: { value: "#00ffe5" },
+    shape: { type: "circle" },
+    opacity: { value: 0.5 },
+    size: { value: 3 },
+    move: { enable: true, speed: 2, direction: "none", out_mode: "out" }
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: { onhover: { enable: true, mode: "repulse" } }
+  },
+  retina_detect: true
+});
+
+const toggleBtn = document.getElementById('toggleDark');
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('light-mode');
+  document.body.classList.toggle('dark-mode');
+});
+
+gsap.from("h1", {duration: 1, y: -100, opacity: 0, ease: "bounce"});
+gsap.from(".glass", {stagger: 0.2, duration: 1, y: 50, opacity: 0});
+
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  preloader.style.display = 'none';
+});
+</script>
+
+</body>
+</html>
